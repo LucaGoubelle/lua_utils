@@ -1,21 +1,26 @@
-require "lua_utils.file_handler"
-require "lua_utils.string_builder"
-require "lua_utils.copy"
+-- require "lua_utils.file_handler"
+-- require "lua_utils.string_builder"
+-- require "lua_utils.copy"
+-- require "lua_utils.json"
 
 -- test files
 
 -- local fh = FileHandler:new("res/test.txt")
--- print(fh:read())
+-- local lines = fh:readLines()
+-- for k,v in pairs(lines) do
+--     print(k.." : "..v)
+-- end
 
--- local content = "tutu\ntyty\ntata"
+
+-- local content = {"tutu","tyty","tata"}
 -- local fh2 = FileHandler:new("res/test2.txt")
--- fh2:write(content)
+-- fh2:writeLines(content)
 
 -- test string builder
 
-local sb = StringBuilder:new()
-local result = sb:append("tyty"):append("_toto"):toString()
-print(result)
+-- local sb = StringBuilder:new()
+-- local result = sb:append("tyty"):append("_toto"):toString()
+-- print(result)
 
 -- test deepcopy
 
@@ -29,4 +34,15 @@ print(result)
 -- print("\n")
 -- for _,v in pairs(b) do
 --     print(v)
+-- end
+
+-- test json
+
+-- local dataJson = {foo="bar", baz="bas"}
+-- local jsonHandler = JSONHandler:new()
+-- jsonHandler:dump("res/sample.json", dataJson)
+
+-- local jsonData = jsonHandler:load("res/sample.json")
+-- for k,v in pairs(jsonData) do
+--     print(k.." : "..v)
 -- end
