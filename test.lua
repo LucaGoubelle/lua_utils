@@ -2,6 +2,7 @@
 -- require "lua_utils.string_builder"
 -- require "lua_utils.copy"
 -- require "lua_utils.json"
+require "lua_utils.xml_builder"
 
 -- test files
 
@@ -46,3 +47,18 @@
 -- for k,v in pairs(jsonData) do
 --     print(k.." : "..v)
 -- end
+
+---------------------
+-- test XMLBuilder
+---------------------
+
+local xmlB = XMLBuilder:new()
+
+local valueInside = "Some text here..."
+local attrs = {foo="bar", baz="bas"}
+
+local content = xmlB:createHeader()
+content = content.."\n"..xmlB:genDoubleTag("data", attrs, valueInside)
+print(content)
+
+xmlB:dump("res/sample.xml", content)

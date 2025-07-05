@@ -29,6 +29,7 @@ function JSONHandler:load(filepath)
     local file = io.open(filepath, "r")
     if file then
         local content = file:read("*a")
+        file:close()
         return JSONHandler:decode(content)
     else
         print("ERR: File Not Found...")
