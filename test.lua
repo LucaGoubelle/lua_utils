@@ -3,7 +3,8 @@
 -- require "lua_utils.copy"
 -- require "lua_utils.json"
 -- require "lua_utils.xml_builder"
-require "lua_utils.string_spliter"
+-- require "lua_utils.string_spliter"
+require "lua_utils.csv_handler"
 
 -- test files
 
@@ -68,10 +69,23 @@ require "lua_utils.string_spliter"
 -- string spliter test
 -----------------------
 
-local str = "tyty tata toto"
-local ss = StringSpliter:new()
-local tab = ss:split(str, " ")
+-- local str = "tyty tata toto"
+-- local ss = StringSpliter:new()
+-- local tab = ss:split(str, " ")
 
-for _,v in pairs(tab) do
-    print(v)
+-- for _,v in pairs(tab) do
+--     print(v)
+-- end
+
+
+--------------------------
+-- csv test
+--------------------------
+
+local csv = CSVHandler:new()
+local data = csv:load("res/sample.csv")
+for _,row in pairs(data) do
+    for _,col in pairs(row) do
+        print(col)
+    end
 end

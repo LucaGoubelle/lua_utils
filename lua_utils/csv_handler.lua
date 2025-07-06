@@ -4,9 +4,8 @@
 
 CSVHandler = {}
 
-function CSVHandler:new(filepath, delimiter)
+function CSVHandler:new(delimiter)
     local obj = {
-        filepath = filepath
         delimiter = delimiter or ","
     }
     setmetatable(obj, self)
@@ -18,8 +17,8 @@ end
 -- logic methods
 ---------------------
 
-function CSVHandler:_read()
-    local file = io.open(self.filepath, "r")
+function CSVHandler:_read(filepath)
+    local file = io.open(filepath, "r")
     local lns = {}
     if file then
         for line in file:lines() do
@@ -35,7 +34,7 @@ end
 function CSVHandler:_spliting(line)
     local result = {}
     local regex = ("([^%s]+)"):format(self.delimiter)
-    for each in str:gmatch(regex) do
+    for each in line:gmatch(regex) do
         table.insert(result, each)
     end
     return result
@@ -53,8 +52,8 @@ end
 -- CALLABLE METHODS
 -----------------------------------
 
-function CSVHandler:load()
-    local lines = CSVHandler:_read()
+function CSVHandler:load(filepath)
+    local lines = CSVHandler:_read(filepath)
     local data = CSVHandler:_mapData(lines)
     return data
 end
