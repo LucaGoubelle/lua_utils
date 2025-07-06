@@ -89,3 +89,5 @@ for _,row in pairs(data) do
         print(col)
     end
 end
+
+csv:dump("res/sample2.csv", data)
