@@ -2,7 +2,8 @@
 -- require "lua_utils.string_builder"
 -- require "lua_utils.copy"
 -- require "lua_utils.json"
-require "lua_utils.xml_builder"
+-- require "lua_utils.xml_builder"
+require "lua_utils.string_spliter"
 
 -- test files
 
@@ -52,13 +53,25 @@ require "lua_utils.xml_builder"
 -- test XMLBuilder
 ---------------------
 
-local xmlB = XMLBuilder:new()
+-- local xmlB = XMLBuilder:new()
 
-local valueInside = "Some text here..."
-local attrs = {foo="bar", baz="bas"}
+-- local valueInside = "Some text here..."
+-- local attrs = {foo="bar", baz="bas"}
 
-local content = xmlB:createHeader()
-content = content.."\n"..xmlB:genDoubleTag("data", attrs, valueInside)
-print(content)
+-- local content = xmlB:createHeader()
+-- content = content.."\n"..xmlB:genDoubleTag("data", attrs, valueInside)
+-- print(content)
 
-xmlB:dump("res/sample.xml", content)
+-- xmlB:dump("res/sample.xml", content)
+
+-----------------------
+-- string spliter test
+-----------------------
+
+local str = "tyty tata toto"
+local ss = StringSpliter:new()
+local tab = ss:split(str, " ")
+
+for _,v in pairs(tab) do
+    print(v)
+end
