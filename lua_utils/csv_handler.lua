@@ -1,5 +1,6 @@
 -- CSV HANDLER
 -- load a .CSV file with all content in a table 
+-- dump a .CSV file with a table data
 -- @author: LucaGoubelle
 
 CSVHandler = {}

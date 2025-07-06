@@ -1,4 +1,7 @@
 -- StringSpliter
+-- split a string with delimiter
+-- @author: LucaGoubelle
+
 StringSpliter = {}
 
 function StringSpliter:new()

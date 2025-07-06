@@ -1,5 +1,7 @@
 local json = require('cjson')
--- json handler
+-- JSON handler
+-- handle JSON data, dump / load
+-- @author: LucaGoubelle
 
 JSONHandler = {}
 

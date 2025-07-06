@@ -1,4 +1,7 @@
 -- file handler
+-- read / write data from / to .TXT files
+-- @author: LucaGoubelle
+
 FileHandler = {}
 
 

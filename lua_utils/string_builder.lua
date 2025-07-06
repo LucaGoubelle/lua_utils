@@ -1,4 +1,7 @@
 -- string builder
+-- build string with provided instance
+-- @author: LucaGoubelle
+
 StringBuilder = {}
 
 function StringBuilder:new()

@@ -1,4 +1,6 @@
 -- XML Builder
+-- Build XML content with provided instance
+-- @author: LucaGoubelle
 
 XMLBuilder = {}
 
